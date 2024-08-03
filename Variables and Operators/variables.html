@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Here we declare a variable named `name`, but we don't assign it a value yet. 
+        // The `let` keyword is used to declare variables that are scoped to the 
+        // surrounding block, in this case, the `<script>` tag.
+        let name;
+
+        // Now we assign the string "Nyanns" to the `name` variable.
+        name = "Nyanns";
+
+        // Finally, we log the value of the `name` variable to the console using the `console.log()` function.
+        // The console is a built-in debugging tool in web browsers. It allows you to output messages to the 
+        // browser's developer console.
+        console.log("My name is : " + name); // This will concatenate the string before and after the variable
+        console.log("My name is :", name);// This will print the variable as a string with a space before it 
+        let massage = "My name is : " + name;
+        alert(massage);
+
+        // multiple variable
+        let nama = "Nyanns";
+        let age = 22;
+        let hobby = "coding";
+
+        // Using template literals to concatenate string with variables
+        console.log(`My name is ${nama}, age is ${age}, hobby is ${hobby}`);
+
+        // Using string concatenation to concatenate string with variables
+        console.log("My name is " + nama + ", age is " + age + ", hobby is " + hobby);
+
+        console.log('-------------------------');
+        let hello = 'Hello world!';
+
+        let message;
+
+        // copy 'Hello world' from hello into message
+        message = hello;
+
+        // now two variables hold the same data
+        alert(hello); // Hello world!
+        alert(message); // Hello world!
+
+    </script>
+</body>
+
+</html>
