@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let value = prompt('Enter Your Number value', "Number");
+        let number = Number(value);
+
+        if (isNaN(number)) {
+            alert("Invalid Input");
+        } else {
+            (number > 0) ? alert(1) :
+                (number < 0) ? alert(-1) :
+                    alert(0);
+        }
+    </script>
+</body>
+
+</html>

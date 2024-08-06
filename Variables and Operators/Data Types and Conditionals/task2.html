@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Prompt</title>
+    <script>
+        function askForLogin() {
+            while (true) {
+                // Prompt for login
+                let login = prompt("Enter your login:", "");
+
+                if (login === "Admin") {
+                    // Prompt for password if login is "Admin"
+                    let password = prompt("Enter your password:");
+
+                    if (password === "TheMaster") {
+                        // If password is correct
+                        alert("Welcome!");
+                        break; // Exit the loop
+                    } else if (password === "" || password === null) {
+                        // If password is empty or cancelled
+                        alert("Canceled");
+                        break; // Exit the loop
+                    } else {
+                        // If password is incorrect
+                        alert("Wrong password. Try again.");
+                    }
+                } else if (login === "" || login === null) {
+                    // If login is empty or cancelled
+                    alert("Canceled");
+                    break; // Exit the loop
+                } else {
+                    // If login is not "Admin"
+                    alert("I don’t know you. Try again.");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="askForLogin()">Login</button>
+</body>
+
+</html>
