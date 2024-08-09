@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Bentuk For biasa Umum
+        let answer;
+        answer = (prompt("Please enter the number you would like to FizzBuzz up to: "));
+        for (let i = 1; i <= answer; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log("FizzBuzz");
+            } else if (i % 3 === 0) {
+                console.log("Fizz");
+            } else if (i % 5 === 0) {
+                console.log("Buzz");
+            } else {
+                console.log(i);
+            }
+        }
+
+        // Dalam Bentuk Unary Yg lebih sederhana
+        for (let x = 1; x < answer; x++) {
+            console.log(
+                x % 3 === 0 && x % 5 === 0 ? ('FizzBuzz') :
+                    x % 3 === 0 ? ('Fizz') :
+                        x % 5 === 0 ? ('Buzz') :
+                            `${x}`
+            );
+        }
+    </script>
+</body>
+
+</html>
