@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Function Library Example</title>
+    <style>
+        input {
+            font-size: 2em;
+            margin: 10px 1px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="numberInput">Enter a number:</label>
+    <input id="numberInput" class="numberInput" type="text" placeholder="Enter a number">
+    <p id="error"></p>
+    <p id="results"></p>
+
+    <script>
+        const input = document.querySelector('.numberInput');
+        const errorPara = document.getElementById('error');
+        const resultsPara = document.getElementById('results');
+
+        function squared(num) {
+            return num * num;
+        }
+
+        function cubed(num) {
+            return num * num * num;
+        }
+
+        function factorial(num) {
+            if (num < 0) {
+                return undefined;
+            }
+            if (num === 0) {
+                return 1;
+            }
+            let x = num - 1;
+            while (x > 1) {
+                num *= x;
+                x--;
+            }
+            return num;
+        }
+
+        input.addEventListener("change", function () {
+            const num = parseFloat(input.value);
+            if (isNaN(num)) {
+                errorPara.textContent = "You need to enter a number!";
+                resultsPara.textContent = '';
+            } else {
+                errorPara.textContent = '';
+                resultsPara.textContent = `${num} squared is ${squared(num)}. `;
+                resultsPara.textContent += `${num} cubed is ${cubed(num)}. `;
+                resultsPara.textContent += `${num} factorial is ${factorial(num)}. `;
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Age Example</title>
+</head>
+
+<body>
+
+    <h1>Welcome to the Age Check Page</h1>
+
+    <script>
+        let age = prompt('How old are you?', 17);
+
+        function checkAge(age) {
+            age = Number(age);
+
+            if (age >= 18) {
+                return false; // Access denied for age 18 or more
+            } else {
+                return confirm('Do you have permission from your parents?');
+            }
+        }
+
+        if (checkAge(age)) {
+            alert('Access granted');
+        } else {
+            alert('Access denied');
+        }
+    </script>
+
+</body>
+
+</html>
