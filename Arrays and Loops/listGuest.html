@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Live output</h2>
+    <div class="output" style="height: 100px; overflow: auto;">
+        <p class="admitted"></p>
+        <p class="refused"></p>
+    </div>
+
+    <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+        const admitted = document.querySelector('.admitted');
+        const refused = document.querySelector('.refused');
+        admitted.textContent = 'Admit: ';
+        refused.textContent = 'Refuse: ';
+
+        while (people.length > 0) {
+            const person = people.shift(); // Remove the first person from the array
+
+            if (person === 'Phil' || person === 'Lola') {
+                refused.textContent += `${person} and `;
+            } else {
+                admitted.textContent += `${person}, `;
+            }
+        }
+
+        // Handle trailing text correctly
+        refused.textContent = refused.textContent.slice(0, -5); // Remove the last " and "
+        admitted.textContent = admitted.textContent.slice(0, -2); // Remove the last ", "
+
+        // Add "and" before the last admitted person if there are more than one
+        const admittedList = admitted.textContent.split(', ');
+        // admittedList is now ["Admit: Chris", "Anne", "Colin", "Terri"]
+        if (admittedList.length > 2) {
+            admittedList[admittedList.length - 1] = `and ${admittedList[admittedList.length - 1]}`;
+            admitted.textContent = admittedList.join(', ');
+        } else if (admittedList.length === 2) {
+            admitted.textContent = `${admittedList[0]} and ${admittedList[1]}`;
+        }
+    </script>
+</body>
+
+</html>
