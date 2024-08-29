@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clicked {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<!-- your HTML file: -->
+
+<body>
+    <h1>THE TITLE OF YOUR WEBPAGE</h1>
+    <div id="container">panda</div>
+    <button id="myButton">Click Me!</button>
+</body>
+
+<script>
+    // your JavaScript file
+    const container = document.querySelector("#container");
+    const content = document.createElement("div");
+
+    content.classList.add("content");
+    content.textContent = "This is the glorious text-content!";
+
+    container.appendChild(content);
+
+    const myButton = document.getElementById("myButton");
+
+    myButton.addEventListener("click", function () {
+        myButton.classList.add("clicked");
+    });
+
+</script>
+
+</html>

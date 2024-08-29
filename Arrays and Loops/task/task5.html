@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Prime Numbers</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        // Tentukan batas atas
+        let n = 10;
+
+        // Mulai dari angka 2 hingga n
+        for (let i = 2; i <= n; i++) {
+            // Anggap bahwa angka i adalah prima
+            let isPrime = true;
+
+            // Periksa apakah ada pembagi untuk i
+            for (let j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    // Jika i bisa dibagi oleh j tanpa sisa, maka bukan prima
+                    isPrime = false;
+                    break; // Keluar dari loop pemeriksaan
+                }
+            }
+
+            // Jika isPrime tetap true, berarti i adalah angka prima
+            if (isPrime) {
+                alert(i); // Tampilkan angka prima
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Outer: while (true) {
+            let userInput = prompt('enter a Number greater than 100', '');
+            let afterParseInput = parseInt(userInput, 10);
+
+            if (isNaN(afterParseInput) || afterParseInput <= 100) {
+                alert('Invalid input. Please enter a number greater than 100.');
+            } else {
+                alert(afterParseInput);
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>
