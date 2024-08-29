@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Through NodeList</title>
+</head>
+
+<body>
+    <button class="myButton">Button 1</button>
+    <button class="myButton">Button 2</button>
+    <button class="myButton">Button 3</button>
+
+    <script>
+        // Pilih semua tombol dengan class "myButton"
+        const buttons = document.querySelectorAll('.myButton');
+
+        // Tambahkan event listener ke setiap tombol
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert(`Button ${button.textContent} was clicked`);
+            });
+        });
+    </script>
+</body>
+
+</html>
