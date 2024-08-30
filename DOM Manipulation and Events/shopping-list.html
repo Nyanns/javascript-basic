@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii Shopping List</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background-color: #FFE4E1;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #FF69B4;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 15px;
+            border: 2px solid #FFB6C1;
+            width: 60%;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #FF69B4;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FF1493;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #FFF0F5;
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        li button {
+            background-color: #FFB6C1;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        li button:hover {
+            background-color: #FF69B4;
+        }
+
+        /* Optional: Add a custom font for a more kawaii look */
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+        body {
+            font-family: 'Indie Flower', cursive;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Kawaii Shopping List</h1>
+
+    <div>
+        <label for="item">Enter a new item:</label>
+        <input type="text" name="item" id="item">
+        <button id="addButton">Add Item</button>
+    </div>
+
+    <ul id="shoppingList">
+        <!-- Items will be added here -->
+    </ul>
+
+    <script>
+        // Get references to DOM elements
+        const btn = document.querySelector("#addButton");
+        const input = document.querySelector("#item");
+        const list = document.querySelector("#shoppingList");
+
+        // Function to handle the add button click
+        function handleAddItem() {
+            const itemText = input.value.trim();
+
+            if (itemText !== "") {
+                // Create new <li> element for the list item
+                const li = document.createElement("li");
+                li.textContent = itemText;
+
+                // Create the delete button
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+
+                // Add event listener to delete button
+                deleteButton.addEventListener("click", () => {
+                    list.removeChild(li);
+                    console.log("Item deleted");
+                });
+
+                // Append the delete button to the list item
+                li.appendChild(deleteButton);
+
+                // Append the list item to the shopping list
+                list.appendChild(li);
+
+                // Clear the input field after adding the item
+                input.value = "";
+            } else {
+                // Alert if the input is empty
+                alert("Please enter an item!");
+            }
+        }
+
+        // Attach the handleAddItem function to the button click event
+        btn.addEventListener("click", handleAddItem);
+    </script>
+
+</body>
+
+</html>
